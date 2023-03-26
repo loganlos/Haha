@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include "string.h"
+/* 从后往前读取k */
+int main()
+{
+	int i,n,k,c;
+	long long int sum=0,temp=0;
+	char s[100001];
+	scanf("%d",&c);
+	while(c--)
+	{
+		scanf("%d",&n);
+		scanf("%s",&s);
+		for(i=n-1;i>=0;i--)
+		{
+			if(s[i]=='k') temp++;
+			else if(s[i]=='a')
+			{
+				sum=sum+temp;
+			}
+		}
+		printf("%lld\n",sum);
+		temp=0;
+		sum=0;
+	}
+	return 0;
+}
