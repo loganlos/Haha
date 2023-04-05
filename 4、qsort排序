@@ -41,22 +41,20 @@ struct stu
 	char name[20];
 	char sex[10];
 };
-int compare(const void* e1, const void* e2)//规定按成绩排序
+
+int cmp(const void *a, const void *b)
 {
-	struct stu* p1 = (stu*)e1;
-	struct stu* p2 = (stu*)e2;
-	if (p1->grade > p2->grade)
-	{
-		return 1;
-	}
-	else if (p1->grade==p2->grade)
-	{
-		return 0;
-	}
-	else if (p1->grade < p2->grade)
-	{
-		return -1;
-	}
+    struct student *s1 = (struct student *)a;
+    struct student *s2 = (struct student *)b;
+    if(s1->score < s2->score){
+        return 1;
+    }
+    else if(s1->score > s2->score){
+        return -1;
+    }
+    else{
+        return 0;
+    }
 }
  
 int main()
