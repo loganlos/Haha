@@ -1,0 +1,14 @@
+int max(int a,int b,int c)
+{
+	int imax=a;
+	if (imax < b)
+    { 
+        imax = b;
+    }
+    if (imax < c)
+    {
+        imax = c;
+    }
+
+	return imax;
+}	
