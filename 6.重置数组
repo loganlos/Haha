@@ -1,2 +1,4 @@
 int arr[] = {1, 2, 3, 4, 5};  
-memset(arr, 0, sizeof(a));
+memset(arr, 0, sizeof(arr));
+
+/* memset(首地址,值,sizeof(地址总大小))  */
