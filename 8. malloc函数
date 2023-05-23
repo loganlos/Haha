@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int *arr，n;
+    printf("请输入数组长度：");  
+    scanf("%d", &n);  
+
+    arr = (int*)malloc(n * sizeof(int)); // 分配 n 个整型变量的内存空间  
+    if (arr == NULL) // 内存分配失败  
+    { 
+        printf("内存分配失败！\n");  
+        exit(1); // 退出程序  
+    }  
+    
+    /*  分配数组操作  */
+
+    free(arr); // 释放已分配的内存空间  
+    return 0;
+}
+
+使用 malloc 函数的一般步骤如下：
+
+定义一个指向所需数据类型的指针变量。
+调用 malloc 函数，将其返回值强制转换为指向所需数据类型的指针类型，并将所需内存块的字节数作为参数传递给 malloc 函数。
+检查 malloc 函数是否返回了 NULL 指针。如果 malloc 函数返回了 NULL 指针，则说明内存分配失败，需要进行错误处理。
+如果 malloc 函数返回了非 NULL 指针，则说明内存分配成功，可以使用该指针来访问分配的内存块。
+访问完毕后，需要使用 free 函数释放已分配的内存块。
