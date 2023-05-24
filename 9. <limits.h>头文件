@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <limits.h>
+
+dp[i] = INT_MAX; // 将dp数组的值初始化为正无穷大
+
+/*
+INT_MIN	-2147483648	int类型的最小值。
+INT_MAX	2147483647	int类型的最大值。
+UINT_MAX	4294967296	unsigned int类型的最大值
+*/
