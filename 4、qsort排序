@@ -1,78 +1,21 @@
-#include <stdio.h>
-#include "string.h"
-#include <stdlib.h>
 
-/* int、char类型 */
-int cmp_int(const void* _a , const void* _b)　　
-{
-    int* a = (int*)_a;    //强制类型转换
-    int* b = (int*)_b;
-    return *a - *b;　　
-}
-
-
-/* double类型 */
-int cmp_double(const void* _a , const void* _b)　　
-{
-    double* a = (double*)_a;    //强制类型转换
-    double* b = (double*)_b;
-    return *a > *b ? 1 : -1;　  //特别注意
-}
-
-
-/* 字符串类型 */
-int cmp_string(const void* _a , const void* _b)　
-{
-    char* a = (char*)_a;　　//强制类型转换
-    char* b = (char*)_b;
-    return strcmp(a,b);
-}
-
-int main()
-{
-  qsort(函数名a,排序长度len,sizeof(a[0]),cmp_...);
-}
-
-
-/*  结构体类型 */
-struct stu
-{
-	int grade;
-	char name[20];
-	char sex[10];
-};
-
-int cmp(const void *a, const void *b)
-{
-    struct student *s1 = (struct student *)a;
-    struct student *s2 = (struct student *)b;
-    if(s1->score < s2->score){
-        return 1;
-    }
-    else if(s1->score > s2->score){
-        return -1;
-    }
-    else{
-        return 0;
-    }
-}
- 
-int main()
-{
-	struct stu a = { 90,"zhangsan","man" };
-	struct stu b = { 80,"lisi","man" };
-	struct stu c = { 70,"wangwu","man" };
-	struct stu arr[3] = { a,b,c };
-	qsort(arr, 3, sizeof(arr[0]), compare);
-}
-
-/* Chatgpt */
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/* int */
 int compare(const void *a, const void *b) {
     return *(int*)a - *(int*)b;
 }
+
+/* structure */
+int compare(const void *a, const void *b) {
+    Facility *p = (Facility *)a, *q = (Facility *)b;
+    return q->v - p->v;
+}
+
+
+
 
 int main() {
     int arr[] = {3, 1, 4, 2, 5};
